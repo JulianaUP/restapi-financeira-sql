@@ -8,133 +8,69 @@ Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/t
 
 - [CodeSandbox — Docs](https://codesandbox.io/docs/learn)
 - [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
-# FinApp - API Backend
+#  FinApp - API Backend
 
-Uma API RESTful para gerenciamento financeiro pessoal, desenvolvida com Node.js, Express e PostgreSQL (Neon).
+API para gerenciamento financeiro pessoal desenvolvida com Node.js, Express e PostgreSQL.
 
 ## Funcionalidades
 
-- **Autenticação JWT**: Cadastro e login de usuários.
-- **Gestão de Transações**: Criar, listar, editar e excluir transações (receitas e despesas).
-- **Dashboard**: Resumo financeiro mensal e estatísticas por período.
-- **Filtros**: Listagem de transações por mês e ano.
+- Cadastro e login de usuários
+- Gerenciamento de transações (receitas/despesas)
+- Dashboard com resumo financeiro
+- Filtros por mês e ano
 
-## Tecnologias Utilizadas
+##  Tecnologias
 
-- Node.js
-- Express
+- Node.js + Express
 - PostgreSQL (Neon)
-- JWT (JSON Web Tokens)
-- bcryptjs
+- JWT + bcrypt
 - CORS
-- dotenv
 
-## Pré-requisitos
+##  Instalação
 
-- Node.js (versão 16 ou superior)
-- Conta no [Neon](https://neon.tech) para o banco de dados PostgreSQL
-
-## Instalação
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/finapp-backend.git
-   cd finapp-backend
-   Instale as dependências:
-
-bash
+```bash
+git clone https://github.com/seu-usuario/finapp-backend.git
+cd finapp-backend
 npm install
-Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente:
+⚙ Configuração
+Crie um arquivo .env na raiz do projeto:
 
 env
-DATABASE_URL=sua_url_de_conexao_do_neon
-JWT_SECRET=seu_jwt_secret
+DATABASE_URL=sua_url_do_banco_neon
+JWT_SECRET=sua_chave_secreta_aqui
 PORT=3001
-Inicie o servidor:
+Obtenha a DATABASE_URL no dashboard do Neon
 
+Gere um JWT_SECRET com:
+
+bash
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+ Executando
 bash
 npm start
-O servidor estará rodando em http://localhost:3001.
+Servidor rodando em: http://localhost:3001
 
 Endpoints
-Autenticação
-POST /auth/register: Cadastro de usuário.
+Autenticação:
 
-POST /auth/login: Login de usuário.
+POST /auth/register - Cadastrar usuário
 
-Transações
-GET /transactions: Lista transações (com filtros opcionais de mês e ano).
+POST /auth/login - Fazer login
 
-POST /transactions: Cria uma nova transação.
+Transações:
 
-PUT /transactions/:id: Atualiza uma transação existente.
+GET /transactions - Listar transações
 
-DELETE /transactions/:id: Remove uma transação.
+POST /transactions - Criar transação
 
-Dashboard
-GET /dashboard: Retorna o resumo financeiro do mês atual.
+PUT /transactions/:id - Editar transação
 
-GET /stats: Retorna estatísticas de um período específico (parâmetros: month, year).
+DELETE /transactions/:id - Deletar transação
 
-Health Check
-GET /health: Verifica o status da API e a conexão com o banco de dados.
+Dashboard:
 
-Exemplos de Uso
-Cadastro de Usuário
-bash
-curl -X POST http://localhost:3001/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "João Silva",
-    "email": "joao@email.com",
-    "password": "senha123"
-  }'
-Login
-bash
-curl -X POST http://localhost:3001/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "joao@email.com",
-    "password": "senha123"
-  }'
-Criar Transação
-bash
-curl -X POST http://localhost:3001/transactions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <token_jwt>" \
-  -d '{
-    "description": "Salário",
-    "amount": 3000.00,
-    "type": "income",
-    "category": "Salário",
-    "date": "2024-01-15"
-  }'
-Estrutura do Banco de Dados
-O projeto utiliza stored procedures para operações no banco de dados. Certifique-se de que as seguintes funções estejam definidas no seu banco:
+GET /dashboard - Resumo do mês
 
-register_user(name, email, password)
+GET /stats?month=1&year=2024 - Estatísticas
 
-authenticate_user(email)
-
-create_transaction(description, amount, type, category, date, user_id)
-
-get_user_transactions(user_id, month, year)
-
-update_transaction(transaction_id, user_id, description, amount, type, category, date)
-
-delete_transaction(transaction_id, user_id)
-
-Variáveis de Ambiente
-DATABASE_URL: URL de conexão com o banco de dados PostgreSQL (Neon)
-
-JWT_SECRET: Chave secreta para assinatura dos tokens JWT
-
-PORT: Porta em que o servidor irá rodar (opcional, padrão 3001)
-
-Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
-Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-Desenvolvido por Seu Nome
+Desenvolvido por Juliana Nascimento Pessoa - Projeto de estudos
