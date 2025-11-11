@@ -32,7 +32,7 @@ API para gerenciamento financeiro pessoal desenvolvida com Node.js, Express e Po
 
 ```bash
 # Clone o repositório
-git clone https://github.com/JulianaUP/teste-finapp-banco.git
+git clone https://github.com/JulianaUP/restapi-financeira-sql.git
 
 # Entre no diretório
 cd teste-finapp-banco
