@@ -8,11 +8,11 @@ Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/t
 
 - [CodeSandbox — Docs](https://codesandbox.io/docs/learn)
 - [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
-# 💰 FinApp - API Backend
+#  FinApp - API Backend
 
 API para gerenciamento financeiro pessoal desenvolvida com Node.js, Express e PostgreSQL.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 - **Cadastro e login** de usuários com autenticação JWT
 - **Gerenciamento completo** de transações (receitas e despesas)
@@ -28,7 +28,7 @@ API para gerenciamento financeiro pessoal desenvolvida com Node.js, Express e Po
 - **Segurança:** CORS
 - **Variáveis de Ambiente:** dotenv
 
-## 📦 Instalação
+##  Instalação
 
 ```bash
 # Clone o repositório
@@ -113,3 +113,5 @@ Autenticação via JWT tokens
 CORS habilitado
 
 Variáveis sensíveis em environment variables
+
+Desenvolvido por Juliana Pessoa -Projeto de Estudos 
