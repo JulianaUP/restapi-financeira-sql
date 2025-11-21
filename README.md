@@ -17,8 +17,6 @@ API para gerenciamento financeiro pessoal desenvolvida com Node.js, Express e Po
 - **Cadastro e login** de usuários com autenticação JWT
 - **Gerenciamento completo** de transações (receitas e despesas)
 - **Dashboard** com resumo financeiro mensal
-- **Filtros** por mês e ano
-- **Estatísticas** e relatórios
 
 ## 🛠 Tecnologias
 
